@@ -19,16 +19,17 @@ import cloudscraper
 #     str =  ''.join(tup)
 #     return str
 
-# if len(sys.argv) < 2:
-#     print("erro, informe o site a ser testado\n")
-#     sys.exit(1)
-# site = sys.argv[1]
+locales = ['Porto Alegre, Brazil - (POA)']
+
+
+if len(sys.argv) < 2:
+    print("erro, informe o site a ser testado\n")
+    sys.exit(1)
+site = sys.argv[1]
 
 baseUrl = 'https://www.cloudflarestatus.com/'
-
 scraper = cloudscraper.create_scraper()
 page = scraper.get(baseUrl)
-
 # print(page)
 
 
@@ -41,18 +42,24 @@ if page.status_code != 200:
     # print('Erro: '+page.status_code)
     print("0")
     sys.exit(1)
-locale = 'Porto Alegre, Brazil - (POA)'
-tree = html.fromstring(page.content)
-cities = tree.xpath('//span[contains(text(), "{}")]/text()'.format(locale))
-# print(status)
+  
+doc = html.fromstring(page.content)
 
-for city in cities:
+for locale in locales:
+#   city = tree.xpath('//span[contains(text(), "{}")]/text()'.format(locale))
+#   status = tree.xpath('//span[@class="component-status "]/text()')
+#   print(status)
+
+# var = next (city for city in cities if cities(city))
+# print(var)
+
+# for city in cities:
   # if (x == 'Porto Alegre, Brazil - (POA)'):
-  print(city)
+  # print(city)
   # status = tree.xpath('//span[contains(text(), "{}")]/text()'.format(locale))
   # status = tree.xpath('//span[@class="component-status "]/text()')
-  status = tree.xpath('//span[contains(text(), "{}")]///span[@class="component-status "]/text()'.format(locale))
-  print(status)
+  # status = tree.xpath('//span[contains(text(), "{}")]///span[@class="component-status "]/text()'.format(locale))
+  # print(status)
 
 # for x in range(len(status)):
     # data = status[x]
