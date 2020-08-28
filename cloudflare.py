@@ -36,7 +36,7 @@ class Cloudflare:
             status = 10
         if status == 'Re-routed':
             status = 20
-        if(status == 'Degraded Performance'):
+        if(status == 'degraded_performance'):
             status = 30
         print(status)
 
