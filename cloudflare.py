@@ -34,7 +34,7 @@ class Cloudflare:
     def convert_to_str(self,status):
         if status == 'operational':
             status = 10
-        if status == 'Re-routed':
+        if status == 'partial_outage':
             status = 20
         if(status == 'degraded_performance'):
             status = 30
