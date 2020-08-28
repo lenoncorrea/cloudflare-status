@@ -11,6 +11,7 @@
 import requests
 import json
 import sys
+from cachetools import TTLCache
 
 # def convertTuple(tup):
 #     str =  ''.join(tup)
@@ -31,32 +32,48 @@ class Cloudflare:
         results = json.loads(result)
         return results
 
-    def params(self,results,argument):
-        for component in results:
-            component = results['components']
-            for ids in component:
-                city = component[id]
-                return city
+    def params(self,results):
+        for data in results:
+            data = results['components']
+            for component in range(len(data)):
+                print(data[component]['id'])
+            # for ids in component:
+                # if component['id']
+                # print(component['id'])
+                # city = component[city]
+            #     return city
             #     # if (component == '7k05x28lndzb'):
                 #     print(id)
             # version = results['0']
             # return city
     
-def main():
+    def city(self,argument):
+        cities = {"data": [{"city": "POA", "id": "7k05x28lndzb"}, {"city": "FOR", "id": "2fy0n0pw01nm"}]}
+        for data in cities:
+            for city in cities['data']:
+                if argument == city['city']:
+                    # self.city = city['id']
+                    return self.city
+    
+    def check_cache(self):
+        if self.city:
+            results = self.requesting()
+            data = self.params(results)
+            # return results
+        else:
+            return self.city
+        
+def main(argument):
     cloud = Cloudflare()
-    results = cloud.requesting()
-#   result = cloud.params(results,argument)
-    cities = {"data": [{"city": "POA", "id": "96"}, {"city": "FOR", "id": "48"}]}
-    for city in cities:
-        # if cities['data']['city']
-        print(cities['data']['city'])
-    # cities = json.dumps(cities)
-    # print(cities)
-#   print(result)
+    cache = cloud.check_cache()
+    # result = cloud.city(cache)
+    # else:
+        # pass
+        # print(data)
 
 if __name__ == '__main__':
   argument = sys.argv[1]
-  result = main()
+  result = main(argument)
 
 # user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'
 # headers = {'User-Agent': user_agent}
