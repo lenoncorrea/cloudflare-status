@@ -1,4 +1,4 @@
-#!/home/lenon/cloudflare-status/venv/bin/python
+#!/usr/lib/zabbix/externalscripts/cloudflare-status/venv/bin/python
 
 #--------------------------------------------------------------------
 # file:         cloudflare.py
