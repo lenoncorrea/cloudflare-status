@@ -23,6 +23,9 @@ Vamos criar um link simbólico para nosso script em '/usr/lib/zabbix/externalscr
 ln -s /usr/lib/zabbix/externalscripts/cloudflare-status/cloudflare.py /usr/lib/zabbix/externalscripts/cloudflare.py
 
 ```
+## Importe o template no Zabbix e o monitoramento será iniciado, se quiser também tem uma Dashboard básica para o Graffana.
+### O template Zabbix é 'zbx_monitoring_cloudflare.xml' que está neste repositório.
+### A Dashboard do Graffana é 'grafana_monitorando_cloudflare.json' que está neste repositório.
 
 ## Contribuição
 Achou algum bug ou tem uma sugestão de melhoria? Envie-me!
