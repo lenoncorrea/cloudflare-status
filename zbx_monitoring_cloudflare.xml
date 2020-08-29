@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>4.4</version>
+    <date>2020-08-29T11:59:30Z</date>
+    <groups>
+        <group>
+            <name>Cloudflare</name>
+        </group>
+    </groups>
+    <hosts>
+        <host>
+            <host>CloudFlare</host>
+            <name>CloudFlare</name>
+            <groups>
+                <group>
+                    <name>Cloudflare</name>
+                </group>
+            </groups>
+            <interfaces>
+                <interface>
+                    <interface_ref>if1</interface_ref>
+                </interface>
+            </interfaces>
+            <applications>
+                <application>
+                    <name>Locations</name>
+                </application>
+                <application>
+                    <name>Services</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>CDN/Cache</name>
+                    <type>EXTERNAL</type>
+                    <key>cloudflare.py[&quot;CDN/Cache&quot;]</key>
+                    <delay>5m</delay>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>Services</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Down Detector</name>
+                    </valuemap>
+                    <interface_ref>if1</interface_ref>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;10</expression>
+                            <name>CDN/Cache</name>
+                            <priority>HIGH</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>CDN Cache Purge</name>
+                    <type>EXTERNAL</type>
+                    <key>cloudflare.py[&quot;CDN Cache Purge&quot;]</key>
+                    <delay>5m</delay>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>Services</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Down Detector</name>
+                    </valuemap>
+                    <interface_ref>if1</interface_ref>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;10</expression>
+                            <name>CDN/Cache</name>
+                            <priority>HIGH</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Cloudflare API</name>
+                    <type>EXTERNAL</type>
+                    <key>cloudflare.py[&quot;Cloudflare API&quot;]</key>
+                    <delay>5m</delay>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>Services</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Down Detector</name>
+                    </valuemap>
+                    <interface_ref>if1</interface_ref>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;10</expression>
+                            <name>Cloudflare API</name>
+                            <priority>HIGH</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Cloudflare Authoritative DNS</name>
+                    <type>EXTERNAL</type>
+                    <key>cloudflare.py[&quot;Cloudflare Authoritative DNS&quot;]</key>
+                    <delay>5m</delay>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>Services</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Down Detector</name>
+                    </valuemap>
+                    <interface_ref>if1</interface_ref>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;10</expression>
+                            <name>Cloudflare Authoritative DNS</name>
+                            <priority>HIGH</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Cloudflare Recursive DNS</name>
+                    <type>EXTERNAL</type>
+                    <key>cloudflare.py[&quot;Cloudflare Recursive DNS&quot;]</key>
+                    <delay>5m</delay>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>Services</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Down Detector</name>
+                    </valuemap>
+                    <interface_ref>if1</interface_ref>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;10</expression>
+                            <name>Cloudflare Recursive DNS</name>
+                            <priority>HIGH</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Cloudflare Storage</name>
+                    <type>EXTERNAL</type>
+                    <key>cloudflare.py[&quot;Cloudflare Storage&quot;]</key>
+                    <delay>5m</delay>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>Services</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Down Detector</name>
+                    </valuemap>
+                    <interface_ref>if1</interface_ref>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;10</expression>
+                            <name>Cloudflare Storage</name>
+                            <priority>HIGH</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Cloudflare Workers</name>
+                    <type>EXTERNAL</type>
+                    <key>cloudflare.py[&quot;Cloudflare Workers&quot;]</key>
+                    <delay>5m</delay>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>Services</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Down Detector</name>
+                    </valuemap>
+                    <interface_ref>if1</interface_ref>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;10</expression>
+                            <name>Cloudflare Workers</name>
+                            <priority>HIGH</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Curitiba, Brazil - (CWB)</name>
+                    <type>EXTERNAL</type>
+                    <key>cloudflare.py[&quot;Curitiba, Brazil - (CWB)&quot;]</key>
+                    <delay>5m</delay>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>Locations</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Down Detector</name>
+                    </valuemap>
+                    <interface_ref>if1</interface_ref>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;10</expression>
+                            <name>Curitiba, Brazil - (CWB)</name>
+                            <priority>HIGH</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>DNS Root Servers</name>
+                    <type>EXTERNAL</type>
+                    <key>cloudflare.py[&quot;DNS Root Servers&quot;]</key>
+                    <delay>5m</delay>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>Services</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Down Detector</name>
+                    </valuemap>
+                    <interface_ref>if1</interface_ref>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;10</expression>
+                            <name>DNS Root Servers</name>
+                            <priority>HIGH</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>DNS Updates</name>
+                    <type>EXTERNAL</type>
+                    <key>cloudflare.py[&quot;DNS Updates&quot;]</key>
+                    <delay>5m</delay>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>Services</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Down Detector</name>
+                    </valuemap>
+                    <interface_ref>if1</interface_ref>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;10</expression>
+                            <name>DNS Updates</name>
+                            <priority>HIGH</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Fortaleza, Brazil - (FOR)</name>
+                    <type>EXTERNAL</type>
+                    <key>cloudflare.py[&quot;Fortaleza, Brazil - (FOR)&quot;]</key>
+                    <delay>5m</delay>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>Locations</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Down Detector</name>
+                    </valuemap>
+                    <interface_ref>if1</interface_ref>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;10</expression>
+                            <name>Fortaleza, Brazil - (FOR)</name>
+                            <priority>HIGH</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Porto Alegre, Brazil - (POA)</name>
+                    <type>EXTERNAL</type>
+                    <key>cloudflare.py[&quot;Porto Alegre, Brazil - (POA)&quot;]</key>
+                    <delay>5m</delay>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>Locations</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Down Detector</name>
+                    </valuemap>
+                    <interface_ref>if1</interface_ref>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;10</expression>
+                            <name>Porto Alegre, Brazil - (POA)</name>
+                            <priority>HIGH</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>Rio de Janeiro, Brazil - (GIG)</name>
+                    <type>EXTERNAL</type>
+                    <key>cloudflare.py[&quot;Rio de Janeiro, Brazil - (GIG)&quot;]</key>
+                    <delay>5m</delay>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>Locations</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Down Detector</name>
+                    </valuemap>
+                    <interface_ref>if1</interface_ref>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;10</expression>
+                            <name>Rio de Janeiro, Brazil - (GIG)</name>
+                            <priority>HIGH</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>São Paulo, Brazil - (GRU)</name>
+                    <type>EXTERNAL</type>
+                    <key>cloudflare.py[&quot;São Paulo, Brazil - (GRU)&quot;]</key>
+                    <delay>5m</delay>
+                    <history>7d</history>
+                    <trends>90d</trends>
+                    <applications>
+                        <application>
+                            <name>Locations</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Down Detector</name>
+                    </valuemap>
+                    <interface_ref>if1</interface_ref>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&gt;10</expression>
+                            <name>São Paulo, Brazil - (GRU)</name>
+                            <priority>HIGH</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+            <inventory_mode>DISABLED</inventory_mode>
+        </host>
+    </hosts>
+    <value_maps>
+        <value_map>
+            <name>Down Detector</name>
+            <mappings>
+                <mapping>
+                    <value>10</value>
+                    <newvalue>success</newvalue>
+                </mapping>
+                <mapping>
+                    <value>20</value>
+                    <newvalue>warning</newvalue>
+                </mapping>
+                <mapping>
+                    <value>30</value>
+                    <newvalue>danger</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+    </value_maps>
+</zabbix_export>
